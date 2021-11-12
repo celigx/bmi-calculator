@@ -28,7 +28,7 @@ function App() {
       <div className="outputContainer">
         <h1 className="title">Calculate your Body Index Mass</h1>
         <div className="body">
-          <p className="text">Your BMI is <b>24.5</b>, indicating your weight is in the <b>Normal</b> category for adults of you height.</p>
+          <p className="text">Your BMI is <b>{bmi.toFixed(2)}</b>, indicating your weight is in the <b>Normal</b> category for adults of you height.</p>
           <p className="text">For your height, a normal weight range would be from <b>56.7</b> to <b>76.3</b> kilograms.</p>
           <p className="text">Maintaining a healthy weight may reduce the risk of chronic diseases associated with overweight and obesity.</p>
         </div>
