@@ -8,11 +8,14 @@ function App() {
   const [bmiCategory, setBmiCategory] = useState()
   const [chart, setChart] = useState()
   const [minWeight, setMinWeight] = useState(56.7)
+  const [maxWeight, setMaxWeight] = useState(76.3)
 
   useEffect(() => {
     calculateBMI()
     BMIcategory()
-  }, [bmi, weight, weight, bmiCategory, chart])
+    IBWmin()
+    IBWmax()
+  }, [bmi, height, weight, bmiCategory, chart])
 
   const handleHeightInput = (e) => {
     setHeight(e.target.value)
@@ -54,9 +57,14 @@ function App() {
     }
   }
 
-  // min ideal body weight
+  // Min ideal body weight
   const IBWmin = () => {
-    setMinWeight(18.5 * height ** 2)
+    setMinWeight(18.5 * (height / 100) ** 2 )
+  }
+
+  // Max ideal body weight
+  const IBWmax = () => {
+    setMaxWeight(24.9 * (height / 100) ** 2)
   }
 
   return (
@@ -66,7 +74,7 @@ function App() {
         <h1 className="title">Calculate your Body Index Mass</h1>
         <div className="body">
           <p className="text">Your BMI is <b>{bmi.toFixed(2)}</b>, indicating your weight is in the <b>{bmiCategory}</b> category for adults of you height.</p>
-          <p className="text">For your height, a normal weight range would be from <b>{minWeight}</b> to <b>76.3</b> kilograms.</p>
+          <p className="text">For your height, a normal weight range would be from <b>{minWeight.toFixed(2)}</b> to <b>{maxWeight.toFixed(2)}</b> kilograms.</p>
           <p className="text">Maintaining a healthy weight may reduce the risk of chronic diseases associated with overweight and obesity.</p>
         </div>
       </div>
