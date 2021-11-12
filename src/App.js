@@ -27,10 +27,6 @@ function App() {
 
       <div className="inputContainer">
         <p className="title">Find out your <b>BMI</b></p>
-        <div className="buttonContainer">
-          <a>KG</a>
-          <a>LBS</a>
-        </div>
         <div className="heightWeightContainer">
           <div className="height">
             <p className="text">Height (cm)</p>
