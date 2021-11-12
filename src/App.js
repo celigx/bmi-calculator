@@ -7,6 +7,7 @@ function App() {
   const [bmi, setBMI] = useState(24.49)
   const [bmiCategory, setBmiCategory] = useState()
   const [chart, setChart] = useState()
+  const [minWeight, setMinWeight] = useState(56.7)
 
   useEffect(() => {
     calculateBMI()
@@ -53,6 +54,11 @@ function App() {
     }
   }
 
+  // min ideal body weight
+  const IBWmin = () => {
+    setMinWeight(18.5 * height ** 2)
+  }
+
   return (
     <div className="app">
 
@@ -60,7 +66,7 @@ function App() {
         <h1 className="title">Calculate your Body Index Mass</h1>
         <div className="body">
           <p className="text">Your BMI is <b>{bmi.toFixed(2)}</b>, indicating your weight is in the <b>{bmiCategory}</b> category for adults of you height.</p>
-          <p className="text">For your height, a normal weight range would be from <b>56.7</b> to <b>76.3</b> kilograms.</p>
+          <p className="text">For your height, a normal weight range would be from <b>{minWeight}</b> to <b>76.3</b> kilograms.</p>
           <p className="text">Maintaining a healthy weight may reduce the risk of chronic diseases associated with overweight and obesity.</p>
         </div>
       </div>
