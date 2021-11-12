@@ -3,9 +3,14 @@ import './App.sass';
 
 function App() {
   const [height, setHeight] = useState(175)
+  const [weight, setWeight] = useState(75)
 
   const handleHeightInput = (e) => {
     setHeight(e.target.value)
+  }
+
+  const handleWeightInput = (e) => {
+    setWeight(e.target.value)
   }
 
   return (
@@ -33,7 +38,7 @@ function App() {
           </div>
           <div className="weight">
             <p className="text">Weight (kg)</p>
-            <input type="number" placeholder="75" />
+            <input type="number" placeholder="75" value={weight} onChange={handleWeightInput} />
           </div>
         </div>
         <div className="bmiContainer">
