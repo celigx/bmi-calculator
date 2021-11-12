@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.sass';
 
 function App() {
   const [height, setHeight] = useState(175)
   const [weight, setWeight] = useState(75)
+  const [bmi, setBMI] = useState('')
+
+  useEffect(() => {
+    calculateBMI()
+  }, [height, weight])
 
   const handleHeightInput = (e) => {
     setHeight(e.target.value)
@@ -11,6 +16,10 @@ function App() {
 
   const handleWeightInput = (e) => {
     setWeight(e.target.value)
+  }
+
+  const calculateBMI = () => {
+    setBMI(weight / (height / 100) ** 2)
   }
 
   return (
@@ -39,7 +48,7 @@ function App() {
         </div>
         <div className="bmiContainer">
           <p className="text">Your Body Mass Index (BMI)</p>
-          <h3 className="bmi">24.5</h3>
+          <h3 className="bmi">{bmi.toFixed(2)}</h3>
         </div>
         <div className="chart">
           <div className="arrow"></div>
