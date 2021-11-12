@@ -101,3 +101,24 @@ h1,h2,h3,h4,h5,p,a
       height: inherit
       background: #000
       margin: 0 50%
+
+@media screen and ( min-width: 768px )
+  .app
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100vh
+    max-width: 1024px
+    margin: 0 auto
+
+    .outputContainer
+      margin: 0 20px 0 40px
+      .title
+        font-size: 52px
+      .body
+        .text
+          font-size: 20px
+    
+    .inputContainer
+      margin: 0 40px 0 20px
+  
