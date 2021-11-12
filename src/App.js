@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import './App.sass';
 
 function App() {
+  const [height, setHeight] = useState(175)
+
+  const handleHeightInput = (e) => {
+    setHeight(e.target.value)
+  }
+
   return (
     <div className="app">
 
@@ -22,7 +29,7 @@ function App() {
         <div className="heightWeightContainer">
           <div className="height">
             <p className="text">Height (cm)</p>
-            <input type="number" placeholder="175" />
+            <input type="number" placeholder="175" value={height} onChange={handleHeightInput} />
           </div>
           <div className="weight">
             <p className="text">Weight (kg)</p>
