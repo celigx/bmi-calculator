@@ -71,7 +71,7 @@ function App() {
     <div className="app">
 
       <div className="outputContainer">
-        <h1 className="title">Calculate your Body Index Mass</h1>
+        <h1 className="title">Calculate your Body Mass Index</h1>
         <div className="body">
           <p className="text">Your BMI is <b>{bmi.toFixed(2)}</b>, indicating your weight is in the <b>{bmiCategory}</b> category for adults of you height.</p>
           <p className="text">For your height, a normal weight range would be from <b>{minWeight.toFixed(2)}</b> to <b>{maxWeight.toFixed(2)}</b> kilograms.</p>
