@@ -2,4 +2,4 @@
 
 #### Calculate your body mass index (BMI)
 
-![Clouds](../media/assets/bmi-calculator-desktop.png?raw=true)
+![BMI Calculator](../media/src/assets/bmi-calculator-desktop.png?raw=true)
